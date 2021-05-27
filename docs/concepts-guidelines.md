@@ -88,7 +88,7 @@ In these cases, you *must supply* the `base` input so the action can rebase chan
 Workflows triggered by [`pull_request`](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#pull_request) events will by default check out a merge commit. Set the `base` input as follows to base the new pull request on the current pull request's branch.
 
 ```yml
-      - uses: peter-evans/create-pull-request@v3
+      - uses: CalefiGustavo/create-pull-request@v3
         with:
           base: ${{ github.head_ref }}
 ```
@@ -96,7 +96,7 @@ Workflows triggered by [`pull_request`](https://docs.github.com/en/actions/refer
 Workflows triggered by [`release`](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#release) events will by default check out a tag. For most use cases, you will need to set the `base` input to the branch name of the tagged commit.
 
 ```yml
-      - uses: peter-evans/create-pull-request@v3
+      - uses: CalefiGustavo/create-pull-request@v3
         with:
           base: main
 ```
@@ -164,7 +164,7 @@ Alternatively, use the action directly and reference the commit hash for the ver
   - uses: thirdparty/foo-action@172ec762f2ac8e050062398456fccd30444f8f30
 ```
 
-This action uses [ncc](https://github.com/vercel/ncc) to compile the Node.js code and dependencies into a single JavaScript file under the [dist](https://github.com/peter-evans/create-pull-request/tree/main/dist) directory.
+This action uses [ncc](https://github.com/vercel/ncc) to compile the Node.js code and dependencies into a single JavaScript file under the [dist](https://github.com/CalefiGustavo/create-pull-request/tree/main/dist) directory.
 
 ## Advanced usage
 
@@ -180,7 +180,7 @@ Checking out a branch from a different repository from where the workflow is exe
 
       # Make changes to pull request here
 
-      - uses: peter-evans/create-pull-request@v3
+      - uses: CalefiGustavo/create-pull-request@v3
         with:
           token: ${{ secrets.PAT }}
 ```
@@ -207,7 +207,7 @@ How to use SSH (deploy keys) with create-pull-request action:
       # Make changes to pull request here
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: CalefiGustavo/create-pull-request@v3
 ```
 
 ### Push pull request branches to a fork
@@ -229,7 +229,7 @@ It will use their own fork to push code and create the pull request.
 
       # Make changes to pull request here
 
-      - uses: peter-evans/create-pull-request@v3
+      - uses: CalefiGustavo/create-pull-request@v3
         with:
           token: ${{ secrets.MACHINE_USER_PAT }}
           push-to-fork: machine-user/fork-of-repository
@@ -270,7 +270,7 @@ GitHub App generated tokens are more secure than using a PAT because GitHub App 
       # Make changes to pull request here
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: CalefiGustavo/create-pull-request@v3
         with:
           token: ${{ steps.generate-token.outputs.token }}
 ```
@@ -311,7 +311,7 @@ The action can use GPG to sign commits with a GPG key that you generate yourself
       # Make changes to pull request here
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: CalefiGustavo/create-pull-request@v3
         with:
           token: ${{ secrets.PAT }}
           committer: example <email@example.com>
@@ -341,7 +341,7 @@ jobs:
       # Make changes to pull request here
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: CalefiGustavo/create-pull-request@v3
 ```
 
 **Ubuntu container example:**
@@ -364,5 +364,5 @@ jobs:
       # Make changes to pull request here
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: CalefiGustavo/create-pull-request@v3
 ```

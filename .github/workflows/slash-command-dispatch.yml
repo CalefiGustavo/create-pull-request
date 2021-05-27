@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Slash Command Dispatch
-        uses: peter-evans/slash-command-dispatch@v2
+        uses: CalefiGustavo/slash-command-dispatch@v2
         with:
           token: ${{ secrets.ACTIONS_BOT_TOKEN }}
           config: >
@@ -15,13 +15,13 @@ jobs:
               {
                 "command": "test",
                 "permission": "admin",
-                "repository": "peter-evans/create-pull-request-tests",
+                "repository": "CalefiGustavo/create-pull-request-tests",
                 "named_args": true
               },
               {
                 "command": "clean",
                 "permission": "admin",
-                "repository": "peter-evans/create-pull-request-tests"
+                "repository": "CalefiGustavo/create-pull-request-tests"
               },
               {
                 "command": "cpr-example",
@@ -31,7 +31,7 @@ jobs:
               {
                 "command": "rebase",
                 "permission": "admin",
-                "repository": "peter-evans/slash-command-dispatch-processor",
+                "repository": "CalefiGustavo/slash-command-dispatch-processor",
                 "issue_type": "pull-request"
               }
             ]

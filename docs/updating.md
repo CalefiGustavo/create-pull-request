@@ -2,18 +2,18 @@
 
 ### Breaking changes
 
-- The `author` input now defaults to the user who triggered the workflow run. This default is set via [action.yml](../action.yml) as `${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>`, where `github.actor` is the GitHub user account associated with the run. For example, `peter-evans <peter-evans@users.noreply.github.com>`.
+- The `author` input now defaults to the user who triggered the workflow run. This default is set via [action.yml](../action.yml) as `${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>`, where `github.actor` is the GitHub user account associated with the run. For example, `CalefiGustavo <CalefiGustavo@users.noreply.github.com>`.
 
   To continue to use the `v2` default, set the `author` input as follows.
   ```yaml
-      - uses: peter-evans/create-pull-request@v3
+      - uses: CalefiGustavo/create-pull-request@v3
         with:
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
   ```
 
 - The `author` and `committer` inputs are no longer cross-used if only one is supplied. Additionally, when neither input is set, the `author` and `committer` are no longer determined from an existing identity set in git config. In both cases, the inputs will fall back to their default set in [action.yml](../action.yml).
 
-- Deprecated inputs `project` and `project-column` have been removed in favour of an additional action step. See [Create a project card](https://github.com/peter-evans/create-pull-request#create-a-project-card) for details.
+- Deprecated inputs `project` and `project-column` have been removed in favour of an additional action step. See [Create a project card](https://github.com/CalefiGustavo/create-pull-request#create-a-project-card) for details.
 
 - Deprecated output `pr_number` has been removed in favour of `pull-request-number`.
 
@@ -25,7 +25,7 @@
 
       # Make changes to pull request here
 
-      - uses: peter-evans/create-pull-request@v3
+      - uses: CalefiGustavo/create-pull-request@v3
         with:
           token: ${{ secrets.MACHINE_USER_PAT }}
           push-to-fork: machine-user/fork-of-repository
@@ -68,6 +68,6 @@
 
 ### New features
 
-- Unpushed commits made during the workflow before the action runs will now be considered as changes to be raised in the pull request. See [Controlling commits](https://github.com/peter-evans/create-pull-request#controlling-commits) for details.
+- Unpushed commits made during the workflow before the action runs will now be considered as changes to be raised in the pull request. See [Controlling commits](https://github.com/CalefiGustavo/create-pull-request#controlling-commits) for details.
 - New commits made to the pull request base will now be taken into account when pull requests are updated.
 - If an updated pull request no longer differs from its base it will automatically be closed and the pull request branch deleted.

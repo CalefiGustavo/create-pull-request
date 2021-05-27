@@ -38,7 +38,7 @@ interface RemoteDetail {
 
 export function getRemoteDetail(remoteUrl: string): RemoteDetail {
   // Parse the protocol and github repository from a URL
-  // e.g. HTTPS, peter-evans/create-pull-request
+  // e.g. HTTPS, CalefiGustavo/create-pull-request
   const githubUrl = process.env['GITHUB_SERVER_URL'] || 'https://github.com'
 
   const githubServerMatch = githubUrl.match(/^https?:\/\/(.+)$/i)

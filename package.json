@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peter-evans/create-pull-request.git"
+    "url": "git+https://github.com/CalefiGustavo/create-pull-request.git"
   },
   "keywords": [
     "actions",
@@ -25,9 +25,9 @@
   "author": "Peter Evans",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/peter-evans/create-pull-request/issues"
+    "url": "https://github.com/CalefiGustavo/create-pull-request/issues"
   },
-  "homepage": "https://github.com/peter-evans/create-pull-request",
+  "homepage": "https://github.com/CalefiGustavo/create-pull-request",
   "dependencies": {
     "@actions/core": "1.3.0",
     "@actions/exec": "1.0.4",

@@ -34,26 +34,26 @@ describe('utils tests', () => {
 
   test('getRemoteDetail successfully parses remote URLs', async () => {
     const remote1 = utils.getRemoteDetail(
-      'https://github.com/peter-evans/create-pull-request'
+      'https://github.com/CalefiGustavo/create-pull-request'
     )
     expect(remote1.protocol).toEqual('HTTPS')
-    expect(remote1.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote1.repository).toEqual('CalefiGustavo/create-pull-request')
 
     const remote2 = utils.getRemoteDetail(
-      'https://xxx:x-oauth-basic@github.com/peter-evans/create-pull-request'
+      'https://xxx:x-oauth-basic@github.com/CalefiGustavo/create-pull-request'
     )
     expect(remote2.protocol).toEqual('HTTPS')
-    expect(remote2.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote2.repository).toEqual('CalefiGustavo/create-pull-request')
 
     const remote3 = utils.getRemoteDetail(
-      'git@github.com:peter-evans/create-pull-request.git'
+      'git@github.com:CalefiGustavo/create-pull-request.git'
     )
     expect(remote3.protocol).toEqual('SSH')
-    expect(remote3.repository).toEqual('peter-evans/create-pull-request')
+    expect(remote3.repository).toEqual('CalefiGustavo/create-pull-request')
   })
 
   test('getRemoteDetail fails to parse a remote URL', async () => {
-    const remoteUrl = 'https://github.com/peter-evans'
+    const remoteUrl = 'https://github.com/CalefiGustavo'
     try {
       utils.getRemoteDetail(remoteUrl)
       // Fail the test if an error wasn't thrown
@@ -66,11 +66,11 @@ describe('utils tests', () => {
   })
 
   test('getRemoteUrl successfully returns remote URLs', async () => {
-    const url1 = utils.getRemoteUrl('HTTPS', 'peter-evans/create-pull-request')
-    expect(url1).toEqual('https://github.com/peter-evans/create-pull-request')
+    const url1 = utils.getRemoteUrl('HTTPS', 'CalefiGustavo/create-pull-request')
+    expect(url1).toEqual('https://github.com/CalefiGustavo/create-pull-request')
 
-    const url2 = utils.getRemoteUrl('SSH', 'peter-evans/create-pull-request')
-    expect(url2).toEqual('git@github.com:peter-evans/create-pull-request.git')
+    const url2 = utils.getRemoteUrl('SSH', 'CalefiGustavo/create-pull-request')
+    expect(url2).toEqual('git@github.com:CalefiGustavo/create-pull-request.git')
   })
 
   test('secondsSinceEpoch returns the number of seconds since the Epoch', async () => {
